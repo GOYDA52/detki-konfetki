@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дети-герои Великой Отечественной войны</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f4e9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1580130732478-4d03694a6588?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-title {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-card {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .hero-item {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #e53e3e;
+            border: 3px solid #fff;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% - 20px);
+            background-color: #e53e3e;
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="hero min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-4">
+            <div class="hero-card max-w-4xl mx-auto p-8 rounded-lg">
+                <h1 class="hero-title text-4xl md:text-6xl font-bold mb-6 text-center animate-fade-in">Дети-герои Великой Отечественной войны</h1>
+                <p class="text-xl md:text-2xl mb-8 text-center animate-fade-in delay-100">Юные защитники Родины, чьи подвиги навсегда вписаны в историю</p>
+                <div class="flex justify-center animate-fade-in delay-200">
+                    <a href="#heroes" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-chevron-down mr-2"></i> Узнать истории
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container mx-auto px-4 py-16">
+        <!-- Вступление -->
+        <section class="mb-20">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800 animate-fade-in">Маленькие герои большой войны</h2>
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 animate-fade-in delay-100">
+                    <p class="text-lg mb-4">В годы Великой Отечественной войны наравне со взрослыми сражались и дети. Они становились разведчиками, подрывниками, связными, участвовали в боевых операциях и совершали подвиги, которые трудно представить даже взрослому человеку.</p>
+                    <p class="text-lg mb-4">Среди них были и те, кто был удостоен высших наград страны. Их имена навсегда остались в истории как символ мужества, отваги и беззаветной любви к Родине.</p>
+                    <p class="text-lg">На этом сайте мы расскажем о четырех таких героях: Леониде Голикове, Александре Бородулине, Викторе Хоменко и Надежде Богдановой.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Герои -->
+        <section id="heroes" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800 animate-fade-in">Герои и их подвиги</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Леонид Голиков -->
+                <div class="hero-item bg-white rounded-xl overflow-hidden shadow-lg animate-fade-in delay-100">
+                    <div class="flip-card h-full">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front h-full">
+                                <img src="https://warheroes.ru/hero/images/hero/golikov_l.jpg" alt="Леонид Голиков" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Леонид Голиков</h3>
+                                    <p class="text-gray-600 mb-4">1926-1943</p>
+                                    <div class="flex items-center mb-4">
+                                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Герой Советского Союза</span>
+                                    </div>
+                                    <p class="text-gray-700">Юный партизан, разведчик, уничтоживший более 70 фашистов и 10 вражеских машин.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back bg-red-600 text-white p-6 h-full flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold mb-4">Подвиги Леонида</h3>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Участвовал в 27 боевых операциях</li>
+                                    <li>Подорвал 2 железнодорожных и 12 шоссейных мостов</li>
+                                    <li>Уничтожил 78 немецких солдат и офицеров</li>
+                                    <li>Добыл важные документы немецкого генерала</li>
+                                </ul>
+                                <p class="mt-4 italic">Погиб в бою 24 января 1943 года в возрасте 16 лет</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Александр Бородулин -->
+                <div class="hero-item bg-white rounded-xl overflow-hidden shadow-lg animate-fade-in delay-200">
+                    <div class="flip-card h-full">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front h-full">
+                                <img src="https://warheroes.ru/hero/images/hero/borodulin_a.jpg" alt="Александр Бородулин" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Александр Бородулин</h3>
+                                    <p class="text-gray-600 mb-4">1926-1942</p>
+                                    <div class="flex items-center mb-4">
+                                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Герой Советского Союза</span>
+                                    </div>
+                                    <p class="text-gray-700">Юный партизан-подрывник, совершивший ряд успешных диверсий против фашистов.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back bg-red-600 text-white p-6 h-full flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold mb-4">Подвиги Александра</h3>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Подорвал 5 вражеских эшелонов</li>
+                                    <li>Уничтожил склад с боеприпасами</li>
+                                    <li>Вывел из строя несколько километров железной дороги</li>
+                                    <li>Проводил разведку в тылу врага</li>
+                                </ul>
+                                <p class="mt-4 italic">Погиб при выполнении боевого задания 8 августа 1942 года в возрасте 16 лет</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Виктор Хоменко -->
+                <div class="hero-item bg-white rounded-xl overflow-hidden shadow-lg animate-fade-in delay-300">
+                    <div class="flip-card h-full">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front h-full">
+                                <img src="https://warheroes.ru/hero/images/hero/homenko_v.jpg" alt="Виктор Хоменко" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Виктор Хоменко</h3>
+                                    <p class="text-gray-600 mb-4">1926-1942</p>
+                                    <div class="flex items-center mb-4">
+                                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Герой Советского Союза</span>
+                                    </div>
+                                    <p class="text-gray-700">Юный партизан, связной и разведчик, выполнявший опасные задания в тылу врага.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back bg-red-600 text-white p-6 h-full flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold mb-4">Подвиги Виктора</h3>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Передавал важные разведданные</li>
+                                    <li>Участвовал в подрыве вражеских эшелонов</li>
+                                    <li>Помогал выводить из окружения советских солдат</li>
+                                    <li>Распространял листовки среди населения</li>
+                                </ul>
+                                <p class="mt-4 italic">Был схвачен и казнен фашистами 10 декабря 1942 года в возрасте 16 лет</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Надежда Богданова -->
+                <div class="hero-item bg-white rounded-xl overflow-hidden shadow-lg animate-fade-in delay-400">
+                    <div class="flip-card h-full">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front h-full">
+                                <img src="https://warheroes.ru/hero/images/hero/bogdanova_n.jpg" alt="Надежда Богданова" class="w-full h-64 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Надежда Богданова</h3>
+                                    <p class="text-gray-600 mb-4">1931-1991</p>
+                                    <div class="flex items-center mb-4">
+                                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Герой Советского Союза</span>
+                                    </div>
+                                    <p class="text-gray-700">Самая юная участница партизанского движения, разведчица и связная.</p>
+                                </div>
+                            </div>
+                            <div class="flip-card-back bg-red-600 text-white p-6 h-full flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold mb-4">Подвиги Надежды</h3>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>В 10 лет стала разведчицей в партизанском отряде</li>
+                                    <li>Выполняла опасные задания в оккупированном Витебске</li>
+                                    <li>Дважды была схвачена фашистами и чудом выжила</li>
+                                    <li>После войны активно занималась патриотическим воспитанием</li>
+                                </ul>
+                                <p class="mt-4 italic">Единственная из четверых, кто дожил до Победы и мирных дней</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Хронология -->
+        <section class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">Хронология подвигов</h2>
+            
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-6">
+                <div class="space-y-8">
+                    <div class="timeline-item">
+                        <h3 class="text-xl font-bold mb-2 text-red-600">1941 год</h3>
+                        <p>Начало войны. Многие дети, оставшиеся на оккупированных территориях, вступают в партизанские отряды и подпольные организации.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3 class="text-xl font-bold mb-2 text-red-600">Лето 1942 года</h3>
+                        <p>Леонид Голиков и Александр Бородулин начинают активную партизанскую деятельность, совершая диверсии на коммуникациях врага.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3 class="text-xl font-bold mb-2 text-red-600">Август 1942 года</h3>
+                        <p>Гибель Александра Бородулина при выполнении боевого задания. В этом же году начинается партизанская деятельность Виктора Хоменко.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3 class="text-xl font-bold mb-2 text-red-600">Январь 1943 года</h3>
+                        <p>Гибель Леонида Голикова в неравном бою с карателями. В этом же году Надежда Богданова, самая юная из героев, попадает в плен и чудом выживает после пыток.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3 class="text-xl font-bold mb-2 text-red-600">1944-1945 годы</h3>
+                        <p>Освобождение оккупированных территорий. Надежда Богданова, единственная из четверых, доживает до Победы.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3 class="text-xl font-bold mb-2 text-red-600">Послевоенные годы</h3>
+                        <p>Посмертное присвоение звания Героя Советского Союза Леониду Голикову, Александру Бородулину и Виктору Хоменко. Надежда Богданова получает это звание в 1965 году.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Память -->
+        <section class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800">Память о героях</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1585435557343-3b0780620d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Вечный огонь" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Увековечение памяти</h3>
+                        <p class="mb-4">Имена всех четырех героев высечены на мемориалах, в их честь названы улицы, школы и пионерские организации по всей стране.</p>
+                        <p>Особенно трогательно, что в Витебске, где воевала Надежда Богданова, установлен памятник юным героям-подпольщикам.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518893883415-b8d9a29ee7d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Книги о войне" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">В литературе и искусстве</h3>
+                        <p class="mb-4">Подвигам детей-героев посвящены книги, фильмы, песни и стихи. Их истории передаются из поколения в поколение как пример беспримерного мужества.</p>
+                        <p>Особенно известна книга "Улица младшего сына" Льва Кассиля о Володе Дубинине, в которой упоминаются и наши герои.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Цитата -->
+        <section class="mb-20">
+            <div class="max-w-4xl mx-auto bg-red-600 text-white rounded-xl shadow-lg p-8 md:p-12">
+                <blockquote class="text-xl md:text-2xl italic mb-6">
+                    "Им было всего по 12-16 лет. Они не дожили до Победы, но их подвиги стали символом несгибаемой воли и любви к Родине. Они не думали о славе - они думали о долге."
+                </blockquote>
+                <p class="text-right font-bold">- Из воспоминаний ветеранов</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Дети-герои ВОВ</h3>
+                    <p class="text-gray-400">Память о юных защитниках Родины</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-vk text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-telegram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Память поколений. Все права защищены.</p>
+                <p class="mt-2">Материалы сайта могут быть использованы в образовательных целях.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="toTopBtn" class="fixed bottom-6 right-6 bg-red-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition opacity-0 invisible">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <script>
+        // Анимация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach(el => {
+                el.style.opacity = '0';
+            });
+            
+            setTimeout(() => {
+                elements.forEach(el => {
+                    el.style.opacity = '1';
+                });
+            }, 100);
+        });
+        
+        // Кнопка "Наверх"
+        const toTopBtn = document.getElementById('toTopBtn');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                toTopBtn.classList.remove('opacity-0', 'invisible');
+                toTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                toTopBtn.classList.remove('opacity-100', 'visible');
+                toTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        toTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Плавная прокрутка для якорей
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
