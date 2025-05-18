@@ -164,7 +164,7 @@
                     <div class="flip-card h-full">
                         <div class="flip-card-inner h-full">
                             <div class="flip-card-front h-full">
-                                <img src="https://warheroes.ru/hero/images/hero/golikov_l.jpg" alt="Леонид Голиков" class="w-full h-64 object-cover">
+                                <img src="https://upload.wikimedia.org/wikipedia/ru/2/2d/Leonid_Golikov.jpg" alt="Леонид Голиков" class="w-full h-64 object-cover">
                                 <div class="p-6">
                                     <h3 class="text-2xl font-bold mb-2 text-gray-800">Леонид Голиков</h3>
                                     <p class="text-gray-600 mb-4">1926-1943</p>
@@ -193,7 +193,7 @@
                     <div class="flip-card h-full">
                         <div class="flip-card-inner h-full">
                             <div class="flip-card-front h-full">
-                                <img src="https://warheroes.ru/hero/images/hero/borodulin_a.jpg" alt="Александр Бородулин" class="w-full h-64 object-cover">
+                                <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/9/9e/%D0%91%D0%BE%D1%80%D0%BE%D0%B4%D1%83%D0%BB%D0%B8%D0%BD%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87.jpg/330px-%D0%91%D0%BE%D1%80%D0%BE%D0%B4%D1%83%D0%BB%D0%B8%D0%BD%2C_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87.jpg" alt="Александр Бородулин" class="w-full h-64 object-cover">
                                 <div class="p-6">
                                     <h3 class="text-2xl font-bold mb-2 text-gray-800">Александр Бородулин</h3>
                                     <p class="text-gray-600 mb-4">1926-1942</p>
@@ -222,7 +222,7 @@
                     <div class="flip-card h-full">
                         <div class="flip-card-inner h-full">
                             <div class="flip-card-front h-full">
-                                <img src="https://warheroes.ru/hero/images/hero/homenko_v.jpg" alt="Виктор Хоменко" class="w-full h-64 object-cover">
+                                <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/f/f7/%D0%92%D0%B8%D1%82%D1%8F_%D0%A5%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BE.jpg/200px-%D0%92%D0%B8%D1%82%D1%8F_%D0%A5%D0%BE%D0%BC%D0%B5%D0%BD%D0%BA%D0%BE.jpg" alt="Виктор Хоменко" class="w-full h-64 object-cover">
                                 <div class="p-6">
                                     <h3 class="text-2xl font-bold mb-2 text-gray-800">Виктор Хоменко</h3>
                                     <p class="text-gray-600 mb-4">1926-1942</p>
@@ -251,7 +251,7 @@
                     <div class="flip-card h-full">
                         <div class="flip-card-inner h-full">
                             <div class="flip-card-front h-full">
-                                <img src="https://warheroes.ru/hero/images/hero/bogdanova_n.jpg" alt="Надежда Богданова" class="w-full h-64 object-cover">
+                                <img src="https://vignette.wikia.nocookie.net/deti/images/0/0f/4e268218a77e71be564d18c889a2283d.jpg/revision/latest?cb=20130825070150&path-prefix=ru" alt="Надежда Богданова" class="w-full h-64 object-cover">
                                 <div class="p-6">
                                     <h3 class="text-2xl font-bold mb-2 text-gray-800">Надежда Богданова</h3>
                                     <p class="text-gray-600 mb-4">1931-1991</p>
